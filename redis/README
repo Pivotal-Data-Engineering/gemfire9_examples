@@ -1,0 +1,20 @@
+This sample project streams objects into GemFire-Redis and outputs the results
+
+The input client throttles the stream at 1M objects/ minute, or 100,000 objects/ sec.
+They key is composed of Device + timestamp (in milliseconds).
+
+Processing begins with the kafka producer and ends with the kafka consumer.
+
+HOW TO RUN
+
+Adjust the Xmx and Xms in grid/startall.sh to appropriate values (29500 for 32 bit; >= 64G for 64 bit)
+
+Compile everything
+- open a terminal session and type mvn package from the project root
+
+Bring up the GemFire Cluster:
+- open a terminal session and execute the startall.sh script under gemfire-examples/grid
+
+Start the streaming client
+- run ComcastKafkaProducer in the kafka-producer project
+

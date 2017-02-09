@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.pivotal.gemfire9</groupId>
+	<artifactId>redis</artifactId>
+	<packaging>pom</packaging>
+
+    <parent>
+		<groupId>io.pivotal.gemfire9</groupId>
+		<artifactId>parent-pom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+    <modules>
+        <module>gemfire-server</module>
+        <module>kafka-producer</module>
+        <module>gemfire-streaming-client</module>
+    </modules>
+
+</project>
