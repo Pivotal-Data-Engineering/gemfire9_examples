@@ -1,14 +1,136 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><cache xmlns="http://schema.pivotal.io/gemfire/cache" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" copy-on-read="false" is-server="false" lock-lease="120" lock-timeout="60" search-timeout="300" version="8.1" xsi:schemaLocation="http://schema.pivotal.io/gemfire/cache http://schema.pivotal.io/gemfire/cache/cache-8.1.xsd">
-	<pdx>
-		<pdx-serializer>
-			<class-name>com.gemstone.gemfire.pdx.ReflectionBasedAutoSerializer </class-name>
-			<parameter name="classes">
-				<string>.*</string>
-			</parameter>
-		</pdx-serializer>
-	</pdx>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cache xmlns="http://schema.pivotal.io/gemfire/cache" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" copy-on-read="false" is-server="false" lock-lease="120" lock-timeout="60" search-timeout="300" version="1.0" xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd http://schema.pivotal.io/gemfire/cache http://schema.pivotal.io/gemfire/cache/cache-8.1.xsd">
 
-	<region name="Events">
+	<region xmlns="http://geode.apache.org/schema/cache" name="CLPYwHN">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="nDYXe">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="liW\a\VaVBE">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="xtGwA">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="tenGx">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="TChSF^tVAw">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe81f11a07109d5">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe89549d6c36aad">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fd1923090b0098a">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe4cf7ab1a5a691">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fed369010845c60">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fc96d12231a7f28">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fc3d508ef65f4e8">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fa42fb4f26116c0">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="Sotkxkby_">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="UPRye^Bihl">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="ZKX_GV">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="CEo`inBYX\t">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="OhxPo">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="]wVRvuh^kj">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="cVsLZt">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="htsSl">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="kASSOdTF">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="UgoIoD">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="PQXWx">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="TpIvGA">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="rjlhbEaZ">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="WCkD]w">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="nMbK[">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe8c4db1f957583">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe7eaaa768cd264">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fea8225d882021a">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fd266f7e0297e04">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe9e7a1cab06670">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3faa0f3c9e48b440">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fa44ecc88d92cb0">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe111c53e43aab8">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe8f97b30d1afbd">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe6ea6528c34a12">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fde5aab5ba543b6">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe18d3965815a9e">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fe4fdec8f796311">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region xmlns="http://geode.apache.org/schema/cache" name="3fb9d45a4a7c4ff0">
+    <region-attributes data-policy="partition"/>
+  </region>
+<region name="Events">
 		<region-attributes refid="PARTITION_REDUNDANT"/>
 	</region>
 

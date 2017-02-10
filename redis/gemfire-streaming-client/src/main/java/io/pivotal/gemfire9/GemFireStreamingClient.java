@@ -3,7 +3,6 @@ package io.pivotal.gemfire9;
 import java.util.HashMap;
 import java.util.Map;
 
-//import com.cc.stbevents.domain.StbEventKey;
 import org.apache.geode.cache.Region;
 import org.apache.geode.cache.client.ClientCache;
 import org.apache.geode.cache.client.ClientCacheFactory;
@@ -15,7 +14,7 @@ public class GemFireStreamingClient {
 	private int numberOfEntriesPerBatch = 1000;
 
 	private Map<String, String> eventEntries = null;
-	private Region<String, String> stbEventsRegion;
+	private Region<String, String> eventsRegion;
 
 	public GemFireStreamingClient() {
 		initializeCache();
@@ -24,7 +23,7 @@ public class GemFireStreamingClient {
 
 	public void save(String key, String stbEvent) {
 		if (recordCtr % numberOfEntriesPerBatch == 0) {
-			stbEventsRegion.putAll(eventEntries);
+			eventsRegion.putAll(eventEntries);
 			recordCtr = 0;
 			eventEntries.clear();
 		}
@@ -37,6 +36,6 @@ public class GemFireStreamingClient {
 		ClientCacheFactory ccf = new org.apache.geode.cache.client.ClientCacheFactory();
 		ccf.set("cache-xml-file", "./target/classes/config/gemfire/clientCache.xml");
 		ClientCache clientCache = ccf.create();
-		stbEventsRegion = clientCache.getRegion(EVENTS_REGION);
+		eventsRegion = clientCache.getRegion(EVENTS_REGION);
 	}
 }

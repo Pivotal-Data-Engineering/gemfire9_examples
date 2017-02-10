@@ -8,8 +8,8 @@
 #cp ../server/gemfire-functions/target/gemfire-functions-0.0.1-SNAPSHOT.jar locator1/cluster_config/cluster/
 #cp ../lib/gemfire-functions/target/gemfire-functions-0.0.1-SNAPSHOT.jar locator1/cluster_config/cluster/
 
-DIR=$(PWD)
-APP_JARS=$DIR/lib/log4j-core-2.7.jar
+#DIR=$(PWD)
+#APP_JARS=$DIR/lib/log4j-core-2.7.jar
 
 # Issue commands to gfsh to start locator and launch a server
 echo "Starting locator and server..."
@@ -18,7 +18,7 @@ connect
 
 start locator --name=locator1 --port=10334 --properties-file=config/locator.properties --load-cluster-configuration-from-dir=true --initial-heap=256m --max-heap=256m
 
-start server --name=server1 --classpath=$APP_JARS --redis-port=11211 --redis-bind-address=localhost --initial-heap=2g --max-heap=2g --J=-XX:+UseParNewGC --J=-XX:+UseConcMarkSweepGC --J=-XX:+UnlockDiagnosticVMOptions --J=-XX:ParGCCardsPerStrideChunk=32768 --properties-file=config/gemfire.properties
+start server --name=server1 --redis-port=11211 --redis-bind-address=localhost --initial-heap=2g --max-heap=2g --J=-XX:+UseParNewGC --J=-XX:+UseConcMarkSweepGC --J=-XX:+UnlockDiagnosticVMOptions --J=-XX:ParGCCardsPerStrideChunk=32768 --properties-file=config/gemfire.properties
 
 list members;
 list regions;

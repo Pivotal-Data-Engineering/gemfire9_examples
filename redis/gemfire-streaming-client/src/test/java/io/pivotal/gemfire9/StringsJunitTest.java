@@ -37,28 +37,32 @@ import redis.clients.jedis.Jedis;
 
 import org.apache.geode.redis.GeodeRedisServer;
 import org.apache.geode.cache.CacheFactory;
+import org.apache.geode.cache.GemFireCache;
 
 public class StringsJunitTest {
 
 	private static Jedis jedis;
 	private static GeodeRedisServer server;
-	private static org.apache.geode.cache.GemFireCache cache;
+	private static GemFireCache cache;
 	private static Random rand;
 	private static int port = 11211;
 
+	/*
+	 * uncomment the cache and server if you want to run this as a server instead of a client
+	 */
 	@BeforeClass
 	public static void setUp() throws IOException {
 		rand = new Random();
-		CacheFactory cf = new CacheFactory();
-		// cf.set("log-file", "redis.log");
-		cf.set("log-level", "error");
-		cf.set("mcast-port", "0");
-		cf.set("locators", "");
-		cache = cf.create();
-		server = new GeodeRedisServer("localhost", port);
-
-		server.start();
-		jedis = new Jedis("localhost", port, 10000000);
+//		CacheFactory cf = new CacheFactory();
+//		// cf.set("log-file", "redis.log");
+//		cf.set("log-level", "error");
+//		cf.set("mcast-port", "0");
+//		cf.set("locators", "localhost[10334]");
+//		cache = cf.create();
+//		server = new GeodeRedisServer("localhost", port);
+//
+//		server.start();
+	    jedis = new Jedis("localhost", port, 10000000);
 	}
 
 	@Test
@@ -301,7 +305,7 @@ public class StringsJunitTest {
 	@AfterClass
 	public static void tearDown() {
 		jedis.close();
-		cache.close();
-		server.shutdown();
+//		cache.close();
+//		server.shutdown();
 	}
 }
