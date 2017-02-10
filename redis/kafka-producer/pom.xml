@@ -4,7 +4,7 @@
 
 	<artifactId>kafka-producer</artifactId>
 
-    <parent>
+	<parent>
 		<groupId>io.pivotal.gemfire9</groupId>
 		<artifactId>redis</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
@@ -17,11 +17,17 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.5</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.cc.stbevents</groupId> -->
-<!-- 			<artifactId>stb-events-client</artifactId> -->
-<!-- 			<version>0.0.1-SNAPSHOT</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.cc.stbevents</groupId> -->
+		<!-- <artifactId>stb-events-client</artifactId> -->
+		<!-- <version>0.0.1-SNAPSHOT</version> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>io.pivotal.gemfire9</groupId>
+			<artifactId>gemfire-streaming-client</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<name>kafka-producer</name>

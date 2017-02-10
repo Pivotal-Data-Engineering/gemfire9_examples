@@ -4,11 +4,16 @@
 
 	<artifactId>gemfire-streaming-client</artifactId>
 
-    <parent>
+	<parent>
 		<groupId>io.pivotal.gemfire9</groupId>
 		<artifactId>redis</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<gemfire.version>9.0.1</gemfire.version>
+	</properties>
 
 	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 	<dependencies>
@@ -17,8 +22,22 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.5</version>
 		</dependency>
+		<dependency>
+			<groupId>io.pivotal.gemfire</groupId>
+			<artifactId>geode-core</artifactId>
+			<version>${gemfire.version}</version>
+		</dependency>
 	</dependencies>
 
 	<name>gemfire-streaming-client</name>
+
+	<repositories>
+		<repository>
+			<id>gemfire-release-repo</id>
+			<name>Gemfire</name>
+			<url>https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire</url>
+		</repository>
+	</repositories>
+
 
 </project>

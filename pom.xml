@@ -8,11 +8,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-<!-- 	<parent> -->
-<!-- 		<groupId>org.springframework.boot</groupId> -->
-<!-- 		<artifactId>spring-boot-starter-parent</artifactId> -->
-<!-- 		<version>1.4.1.RELEASE</version> -->
-<!-- 	</parent> -->
+	<!-- <parent> -->
+	<!-- <groupId>org.springframework.boot</groupId> -->
+	<!-- <artifactId>spring-boot-starter-parent</artifactId> -->
+	<!-- <version>1.4.1.RELEASE</version> -->
+	<!-- </parent> -->
 
 	<description>Parent module for gemfire9 examples</description>
 
@@ -28,11 +28,11 @@
 	</modules>
 
 	<repositories>
-<!-- 		<repository> -->
-<!-- 			<id>gemfire-release-repo</id> -->
-<!-- 			<name>Gemfire</name> -->
-<!-- 			<url>https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire</url> -->
-<!-- 		</repository> -->
+		<repository>
+			<id>gemfire-release-repo</id>
+			<name>Gemfire</name>
+			<url>https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire</url>
+		</repository>
 		<repository>
 			<id>spring-libs-snapshot</id>
 			<url>https://repo.spring.io/libs-snapshot</url>
@@ -50,38 +50,39 @@
 	</repositories>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-dependencies</artifactId>
-			<type>pom</type>
-			<version>1.4.1.RELEASE</version>
-			<scope>compile</scope>
-		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-dependencies</artifactId> -->
+		<!-- <type>pom</type> -->
+		<!-- <version>1.4.1.RELEASE</version> -->
+		<!-- <scope>compile</scope> -->
+		<!-- </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-gemfire -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-gemfire</artifactId>
-			<version>1.4.1.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<version>1.4.1.RELEASE</version>
-		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-starter-data-gemfire</artifactId> -->
+		<!-- <version>1.4.1.RELEASE</version> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-starter-test</artifactId> -->
+		<!-- <version>1.4.1.RELEASE</version> -->
+		<!-- </dependency> -->
+<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-gemfire -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.data</groupId> -->
+		<!-- <artifactId>spring-data-commons</artifactId> -->
+		<!-- <version>${springdata.commons}</version> -->
+		<!-- </dependency> -->
 
 		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-commons</artifactId>
-			<version>${springdata.commons}</version>
+			<groupId>io.pivotal.gemfire</groupId>
+			<artifactId>geode-core</artifactId>
+			<version>${gemfire.version}</version>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.gemstone.gemfire</groupId> -->
-<!-- 			<artifactId>gemfire</artifactId> -->
-<!-- 			<version>${gemfire.version}</version> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 		</dependency> -->
 	</dependencies>
 
 	<pluginRepositories>
