@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 //import com.cc.stbevents.domain.StbEventKey;
-import com.gemstone.gemfire.cache.Region;
-import com.gemstone.gemfire.cache.client.ClientCache;
-import com.gemstone.gemfire.cache.client.ClientCacheFactory;
+import org.apache.geode.cache.Region;
+import org.apache.geode.cache.client.ClientCache;
+import org.apache.geode.cache.client.ClientCacheFactory;
 
 public class GemFireStreamingClient {
 
@@ -34,7 +34,7 @@ public class GemFireStreamingClient {
 	}
 
 	private void initializeCache() {
-		ClientCacheFactory ccf = new ClientCacheFactory();
+		ClientCacheFactory ccf = new org.apache.geode.cache.client.ClientCacheFactory();
 		ccf.set("cache-xml-file", "./target/classes/config/gemfire/clientCache.xml");
 		ClientCache clientCache = ccf.create();
 		stbEventsRegion = clientCache.getRegion(EVENTS_REGION);

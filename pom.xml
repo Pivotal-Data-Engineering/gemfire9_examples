@@ -50,13 +50,13 @@
 	</repositories>
 
 	<dependencies>
-		<!-- <dependency> -->
-		<!-- <groupId>org.springframework.boot</groupId> -->
-		<!-- <artifactId>spring-boot-dependencies</artifactId> -->
-		<!-- <type>pom</type> -->
-		<!-- <version>1.4.1.RELEASE</version> -->
-		<!-- <scope>compile</scope> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-dependencies</artifactId>
+			<type>pom</type>
+			<version>1.5.1.RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-gemfire -->
 		<!-- <dependency> -->
@@ -64,11 +64,11 @@
 		<!-- <artifactId>spring-boot-starter-data-gemfire</artifactId> -->
 		<!-- <version>1.4.1.RELEASE</version> -->
 		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.springframework.boot</groupId> -->
-		<!-- <artifactId>spring-boot-starter-test</artifactId> -->
-		<!-- <version>1.4.1.RELEASE</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>1.5.1.RELEASE</version>
+		</dependency>
 <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-gemfire -->
 
 		<!-- <dependency> -->

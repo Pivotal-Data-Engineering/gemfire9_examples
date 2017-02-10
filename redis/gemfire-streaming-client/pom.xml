@@ -15,29 +15,15 @@
 		<gemfire.version>9.0.1</gemfire.version>
 	</properties>
 
-	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework.shell/spring-shell -->
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.5</version>
-		</dependency>
-		<dependency>
-			<groupId>io.pivotal.gemfire</groupId>
-			<artifactId>geode-core</artifactId>
-			<version>${gemfire.version}</version>
+			<groupId>org.springframework.shell</groupId>
+			<artifactId>spring-shell</artifactId>
+			<version>1.2.0.RELEASE</version>
 		</dependency>
 	</dependencies>
 
 	<name>gemfire-streaming-client</name>
-
-	<repositories>
-		<repository>
-			<id>gemfire-release-repo</id>
-			<name>Gemfire</name>
-			<url>https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire</url>
-		</repository>
-	</repositories>
-
 
 </project>
