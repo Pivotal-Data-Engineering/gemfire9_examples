@@ -16,9 +16,9 @@ echo "Starting locator and server..."
 gfsh <<!
 connect
 
-start locator --name=locator1 --port=10334 --properties-file=config/locator.properties --load-cluster-configuration-from-dir=true --initial-heap=256m --max-heap=256m
+start locator --name=locator1 --port=10334 --properties-file=config/locator.properties --enable-cluster-configuration --load-cluster-configuration-from-dir=true --initial-heap=256m --max-heap=256m
 
-start server --name=server1 --redis-port=11211 --redis-bind-address=localhost --initial-heap=2g --max-heap=2g --J=-XX:+UseParNewGC --J=-XX:+UseConcMarkSweepGC --J=-XX:+UnlockDiagnosticVMOptions --J=-XX:ParGCCardsPerStrideChunk=32768 --properties-file=config/gemfire.properties
+start server --name=server1 --redis-port=11211 --redis-bind-address=127.0.0.1  --use-cluster-configuration   --initial-heap=2g --max-heap=2g --J=-XX:+UseParNewGC --J=-XX:+UseConcMarkSweepGC --J=-XX:+UnlockDiagnosticVMOptions --J=-XX:ParGCCardsPerStrideChunk=32768 --properties-file=config/gemfire.properties
 
 list members;
 list regions;
