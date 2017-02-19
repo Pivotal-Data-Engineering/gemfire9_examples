@@ -32,11 +32,11 @@ public class ApplicationConfiguration {
 	@Bean
 	RedisConnectionFactory connectionFactory() {
 		JedisConnectionFactory factory=  new JedisConnectionFactory();
-		//factory.setHostName("192.168.58.1");
-		factory.setHostName("172.16.20.1");
-		factory.setTimeout(1000*10000);
-		//factory.setPort(11211);
-		factory.setPort(6379);
+		factory.setHostName("localhost");
+		//factory.setHostName("172.16.20.1");
+		factory.setTimeout(2000);
+		factory.setPort(11211);
+		//factory.setPort(6379);
 		return factory;
 	}
 

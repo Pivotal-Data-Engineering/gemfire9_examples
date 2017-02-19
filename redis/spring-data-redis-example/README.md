@@ -18,10 +18,42 @@ Current GeodeRedisAdapter implementation is based on https://cwiki.apache.org/co
 We are looking for some feedback on Redis commands and their mapping to geode region.
 
 ==========================
+See Pull Request related to GEODE-2469.
+The updated Geode Redis Adapter now works with a sample Spring Data Redis Example 
 
-Hello Hitesh,
+These changes are focused on the HASH and Set Redis Data Types to support Spring Data Redis sample code located at the following URL
 
-The following is my feedback
+https://github.com/Pivotal-Data-Engineering/gemfire9_examples/tree/person_example_sdg_Tracker139498217/redis/spring-data-redis-example/src/test/java/io/pivotal/redis/gemfire/example/repository
+
+The Hash performance changes from this pull request had a 99.8% performance improvement. 
+
+This is based on the Hashes JUNIT Tests.
+
+https://github.com/Pivotal-Data-Engineering/gemfire9_examples/blob/person_example_sdg_Tracker139498217/redis/gemfire-streaming-client/src/test/java/io/pivotal/gemfire9/HashesJUnitTest.java
+
+This code executed in 12.549s against Gemfire 9.0.1 code. After the changes, the test executed in 0.022s with the GEODE-2469 pull request.
+
+Redis Set related command performance had a 99.9% performance improvement. 
+
+See  https://github.com/Pivotal-Data-Engineering/gemfire9_examples/blob/person_example_sdg_Tracker139498217/redis/gemfire-streaming-client/src/test/java/io/pivotal/gemfire9/SetsJUnitTest.java
+
+The previous Set Junit tests executed against GemFire 9.0.1 executed in 31.507 seconds. These same test executed in 0.036 seconds with the GEODE-2469 pull request changes.
+
+The GemFire 9.0.1 Geode (1.1.0) version for the Geode Redis adapter created a Geode Region for each key provided in the Redis Hash or Set related command. Each Redis command to remove key entry previously destroyed the region. The big performance gain is based on using a new ReDiS_HASH and ReDiS_SET region. Note the changed will create or reuse an existing region with a matching name for Redis HASH commands references objects. For Redis HASH object's key will have a format of object:key
+
+Please see https://redis.io/topics/data-types-intro HASH section on objects for information on Redis objects.
+
+
+
+
+
+
+
+
+
+
+
+==========================
  
 2. List Type
 
