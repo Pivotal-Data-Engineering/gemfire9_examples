@@ -117,3 +117,11 @@ SMEMBERS myset "Hello" =>
 			return set.contains(Hello)s  
 
 
+=============
+# Testing
+
+The Spring Data Redis test example were verified with the following GEODE forked branch.
+
+[https://github.com/ggreen/geode/tree/GEODE-2469](https://github.com/ggreen/geode/tree/GEODE-2469)
+
+A pull request as been submitted for these changes and is pending review.
