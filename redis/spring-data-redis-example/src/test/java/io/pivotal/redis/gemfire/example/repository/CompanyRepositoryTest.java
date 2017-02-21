@@ -1,9 +1,7 @@
 package io.pivotal.redis.gemfire.example.repository;
 
-import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.hasItems;
-import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertEquals;
@@ -19,16 +17,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.geo.Circle;
-import org.springframework.data.geo.Distance;
-import org.springframework.data.geo.Metrics;
-import org.springframework.data.geo.Point;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisOperations;
-import org.springframework.data.redis.core.index.GeoIndexed;
 import org.springframework.data.redis.core.index.Indexed;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -37,9 +27,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import io.pivotal.redis.gemfire.example.ApplicationConfiguration;
 
 /**
- * @author Christoph Strobl
- * @author Oliver Gierke
- * @author Mark Paluch
+ * @author Gregory Green
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ApplicationConfiguration.class)
