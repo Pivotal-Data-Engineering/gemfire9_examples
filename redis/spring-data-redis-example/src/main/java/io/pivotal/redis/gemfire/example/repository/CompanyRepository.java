@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.geo.Circle;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CompanyRepository extends CrudRepository<Company, String> 
@@ -22,5 +21,7 @@ public interface CompanyRepository extends CrudRepository<Company, String>
 
 	List<Company> findByAddress_CityTown(String cityTown);
 
-	List<Company> findByAddress_LocationWithin(Circle circle);
+	/*TODO: current no GEO/location support in GemFire List<Company> 
+	findByAddress_LocationWithin(Circle circle);
+	*/
 }
