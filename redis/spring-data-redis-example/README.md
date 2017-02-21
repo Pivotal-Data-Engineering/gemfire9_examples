@@ -1,17 +1,18 @@
 
-#Connect to GemFire redis
-/devtools/repositories/NoSQL/redis-3.2.7/src$ ./redis-cli -h localhost -p 11211
+#Connect to GemFire Redis
+
+	/devtools/repositories/NoSQL/redis-3.2.7/src$ ./redis-cli -h localhost -p 11211
 
 
-#Example commands
+##Example Redis commands
 
-localhost:11211> HSET server:name "fido"
-OK
-localhost:11211>  GET server:name
-"fido"
-
-localhost:11211> 
-----
+	localhost:11211> HSET server:name "fido"
+	OK
+	localhost:11211>  GET server:name
+	"fido"
+	
+	localhost:11211> 
+	----
 
 
 Current GeodeRedisAdapter implementation is based on https://cwiki.apache.org/confluence/display/GEODE/Geode+Redis+Adapter+Proposal.
@@ -23,13 +24,13 @@ The updated Geode Redis Adapter now works with a sample Spring Data Redis Exampl
 
 These changes are focused on the HASH and Set Redis Data Types to support Spring Data Redis sample code located at the following URL
 
-https://github.com/Pivotal-Data-Engineering/gemfire9_examples/tree/person_example_sdg_Tracker139498217/redis/spring-data-redis-example/src/test/java/io/pivotal/redis/gemfire/example/repository
+	https://github.com/Pivotal-Data-Engineering/gemfire9_examples/tree/person_example_sdg_Tracker139498217/redis/spring-data-redis-example/src/test/java/io/pivotal/redis/gemfire/example/repository
 
 The Hash performance changes from this pull request had a 99.8% performance improvement. 
 
 This is based on the Hashes JUNIT Tests.
 
-https://github.com/Pivotal-Data-Engineering/gemfire9_examples/blob/person_example_sdg_Tracker139498217/redis/gemfire-streaming-client/src/test/java/io/pivotal/gemfire9/HashesJUnitTest.java
+	https://github.com/Pivotal-Data-Engineering/gemfire9_examples/blob/person_example_sdg_Tracker139498217/redis/gemfire-streaming-client/src/test/java/io/pivotal/gemfire9/HashesJUnitTest.java
 
 This code executed in 12.549s against Gemfire 9.0.1 code. After the changes, the test executed in 0.022s with the GEODE-2469 pull request.
 
@@ -54,25 +55,8 @@ Please see https://redis.io/topics/data-types-intro HASH section on objects for 
 
 
 ==========================
- 
-2. List Type
-
-I propose using a single partition region (ex: __RedisList) for the List commands.
-
-Region<byteArrayWrapper,ArrayList<byteArrayWrapper>> region;
-//Note: ByteArrayWrapper is what the current RedisAdapter uses as its data type. It converts strings to bytes using UTF8 encoding 
-
-Example Redis commands
-
- RPUSH mylist A =>
- 
-	 Region<ByteArrayWrapper,List<ByteArrayWrapper>> region = getRegion("__RedisList")
-	 List list = getOrCreateList(mylist);
-	 list.add(A)
-     region.put(mylist,list)
-		
- 
-3. Hashes
+  
+## Hashes
  
 Based on my Spring Data Redis testing for Hash/object support.
 
@@ -107,11 +91,9 @@ HSET companies:100 email updated@pivotal.io =>
 	map.set(email,updated@pivotal.io)
 	companiesRegion.put(100,map);
 
-FYI - I started to implement this and hope to submit a pull request soon related to GEODE-2469.
+## Set
 
-4. Set
-
-I propose using a single partition region (ex: __RedisSET) for the SET commands.
+The proposal is to use a single partition region (ex: __RedisSET) for the SET commands.
 
 Region<byteArrayWrapper,HashSet<byteArrayWrapper>> region;
 
@@ -134,23 +116,4 @@ SMEMBERS myset "Hello" =>
 			Set set = region(myset)
 			return set.contains(Hello)s  
 
-   FYI - I started to implement this and hope to submit a pull request soon related to GEODE-2469.
 
-5. SortedSets
-  I propose using a single partition region for the SET commands.
-
-Region<byteArrayWrapper,TreeSet<byteArrayWrapper>> region;e
-
- 
-7. Default config for geode-region (vote)
-  I think the default setting  should be partitioned with persistence and no redundant copies.
-   
-8. It seems; redis knows type(list, hashes, string ,set ..) of each key...
-
-  I suggested assuming all keys are strings in UTF8 byte encoding
- 
-9. Transactions:
-  I agree to not support transactions
- 
-10. Redis COMMAND (https://redis.io/commands/command)
-  + for implementing the "COMMAND"
